@@ -1,4 +1,4 @@
-# 8mosphare
+# The8mosphere
 
 **Cinematic Luxury Real Estate. Marketed by Mood.**
 

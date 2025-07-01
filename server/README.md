@@ -1,4 +1,4 @@
-# 8mosphare Backend (server)
+# The8mosphere Backend (server)
 
 This is the backend API for **8mosphare** — a cinematic luxury real estate platform. Built using Node.js, Express, and MongoDB with Mongoose.
 

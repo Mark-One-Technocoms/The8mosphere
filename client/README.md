@@ -1,4 +1,4 @@
-# 8mosphare Frontend (client)
+# the8mosphere Frontend (client)
 
 This is the frontend React application for **8mosphare** – a cinematic luxury real estate platform. Built with React, Tailwind CSS, and React Router.
 
