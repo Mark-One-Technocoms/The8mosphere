@@ -1,0 +1,23 @@
+import About from "./About/About";
+import Contact from "./Contact/Contact";
+import Home from "./Home/Home";
+import Map from "./Map/Map";
+import Portfolio from "./Portfolio/Portfolio";
+import PropertyDetail from "./PropertyDetail/PropertyDetail";
+import PropertySearch from "./PropertySearch/PropertySearch";
+import RequestAccess from "./RequestAccess/RequestAccess";
+import Search from "./Search/Search";
+import Services from "./Services/Services";
+
+export {
+  About,
+  Contact,
+  Home,
+  Map,
+  Portfolio,
+  PropertyDetail,
+  PropertySearch,
+  RequestAccess,
+  Search,
+  Services,
+};
