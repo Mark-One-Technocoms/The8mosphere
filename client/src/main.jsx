@@ -46,11 +46,11 @@ const router = createBrowserRouter([
         element: <Search />,
       },
       {
-        path: "/propertySearch",
+        path: "/property-search",
         element: <PropertySearch />,
       },
       {
-        path: "/propertyDetail",
+        path: "/property-detail",
         element: <PropertyDetail />,
       },
       {
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
         element: <Map />,
       },
       {
-        path: "/requestAccess",
+        path: "/request-access",
         element: <RequestAccess />,
       },
     ],
