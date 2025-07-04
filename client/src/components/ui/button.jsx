@@ -8,21 +8,24 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-blue-500 text-white shadow-xs hover:bg-blue-400",
+        default:
+          "bg-blue-500 hover:bg-blue-600 text-white shadow-xs hover:cursor-pointer",
         destructive:
-          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+          "bg-destructive text-white shadow-xs hover:bg-destructive/90 hover:cursor-pointer focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
-          "border-2 border-gray-600 hover:border-blue-500 shadow-xs hover:text-blue-500 dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+          "border-2 border-gray-600 hover:border-blue-500 shadow-xs hover:text-blue-500 hover:cursor-pointer dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+        outlineWhite:
+          "border-2 border-white hover:border-gray-300 shadow-xs text-white hover:text-gray-300 hover:cursor-pointer dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 hover:cursor-pointer",
         ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
+          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 hover:cursor-pointer",
+        link: "text-primary underline-offset-4 hover:underline hover:cursor-pointer",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        default: "px-4 py-2 rounded-md has-[>svg]:px-3",
+        sm: "rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "rounded-md px-8 py-4 has-[>svg]:px-4",
         icon: "size-9",
       },
     },

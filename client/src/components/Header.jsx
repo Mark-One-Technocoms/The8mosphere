@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   NavigationMenu,
@@ -20,7 +20,8 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
-import { Menu, ChevronDown, Search } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Menu, ChevronDown, Search, XIcon } from "lucide-react";
 import { navItems } from "../constants";
 import logo from "../assets/logo/8mosphere-logo.PNG";
 
@@ -29,15 +30,35 @@ const Header = () => {
   // State to manage which collapsible item is open in the mobile sheet
   const [openCollapsible, setOpenCollapsible] = useState(null);
 
+  // State to manage search visibility and value
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+
   // Function to toggle collapsible state for a given item name
   const toggleCollapsible = (name) => {
     setOpenCollapsible(openCollapsible === name ? null : name);
   };
 
+  // State to track if user has scrolled down
+  const [scrolled, setScrolled] = useState(false);
+
+  // Effect to listen for scroll events
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="w-full flex justify-between items-center px-10 py-2">
+    <nav
+      className={`w-full flex justify-between items-center px-10 py-2 fixed top-0 left-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-white shadow" : ""
+      }`}
+    >
       {/* Logo or Brand Name - Visible on all screens */}
-      <div>
+      <div className="flex-shrink-0">
         <Link to="/">
           <img className="h-14" src={logo} alt="8mosphere Logo" />
         </Link>
@@ -51,7 +72,11 @@ const Header = () => {
             {navItems.map(({ name, to, items }) =>
               items && items.length > 0 ? (
                 <NavigationMenuItem key={name}>
-                  <NavigationMenuTrigger className="text-base font-semibold hover:text-blue-500">
+                  <NavigationMenuTrigger
+                    className={`2xl:text-base xl:text-sm bg-transparent hover:bg-transparent font-semibold ${
+                      scrolled ? "text-gray-900" : "text-white"
+                    }`}
+                  >
                     {to ? <Link to={to}>{name}</Link> : name}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="border border-gray-200 bg-white shadow-lg rounded-lg p-4">
@@ -61,7 +86,7 @@ const Header = () => {
                         <NavigationMenuItem key={item.name}>
                           <NavigationMenuLink
                             asChild
-                            className="font-semibold text-gray-700 hover:text-blue-500 transition-colors duration-200"
+                            className="font-semibold text-gray-700 transition-colors duration-200"
                           >
                             <Link to={item.to}>{item.name}</Link>
                           </NavigationMenuLink>
@@ -74,7 +99,9 @@ const Header = () => {
                 <NavigationMenuItem key={name}>
                   <NavigationMenuLink
                     asChild
-                    className="text-base font-semibold hover:text-blue-500 transition-colors duration-200"
+                    className={`text-base text-white font-semibold transition-colors duration-200 ${
+                      scrolled ? "text-gray-900" : "text-white"
+                    }`}
                   >
                     <Link to={to}>{name}</Link>
                   </NavigationMenuLink>
@@ -92,7 +119,7 @@ const Header = () => {
             <Button
               variant="outline"
               size="icon"
-              className="h-10 w-10 rounded-full shadow-md"
+              className="h-10 w-10 rounded-full border-none"
             >
               <Menu className="size-6 text-blue-500" />
               <span className="sr-only">Toggle navigation menu</span>
@@ -170,22 +197,35 @@ const Header = () => {
           </SheetContent>
         </Sheet>
       </div>
-      <div className="hidden lg:flex space-x-2">
-        <Button
-          variant="default"
-          size="default"
-          className="hover:cursor-pointer"
-        >
-          Inquire about Membership
-        </Button>
-        <Button
-          variant="outline"
-          size="default"
-          className="hover:cursor-pointer"
-        >
-          <Search className="size-5" />
-          <span className="sr-only">Search</span>
-        </Button>
+      <div className="hidden lg:flex flex-col items-end space-y-2 relative">
+        <div className="flex space-x-2">
+          <Button variant="default" size="default" className="">
+            Inquire about Membership
+          </Button>
+          <Button
+            variant="outlineWhite"
+            size="default"
+            className={`relative ${
+              scrolled ? "text-gray-900 border-gray-900" : ""
+            }`}
+            onClick={() => setShowSearch((prev) => !prev)}
+          >
+            {showSearch ? (
+              <XIcon className="size-5" />
+            ) : (
+              <Search className="size-5" />
+            )}
+          </Button>
+        </div>
+        {showSearch && (
+          <Input
+            type="text"
+            placeholder="Search..."
+            value={searchValue}
+            className="text-white absolute top-12"
+            onChange={(e) => setSearchValue(e.target.value)}
+          />
+        )}
       </div>
     </nav>
   );
