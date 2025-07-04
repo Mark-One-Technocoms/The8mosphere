@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
   Home,
   About,
+  EightVoiced,
   Contact,
   Services,
   Portfolio,
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/8voiced",
+        element: <EightVoiced />,
       },
       {
         path: "/contact",
