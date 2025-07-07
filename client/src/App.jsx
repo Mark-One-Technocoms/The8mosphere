@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Header, Footer } from "./components";
 import { useLocation } from "react-router-dom";
 import { Home, About } from "./pages";
+import EightVoicedDemo from "./components/EightVoicedDemo";
 
 function App() {
   let location = useLocation();
@@ -15,12 +16,13 @@ function App() {
           <>
             <Home />
             <About />
+            <EightVoicedDemo />
           </>
         ) : (
           <Outlet />
         )}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

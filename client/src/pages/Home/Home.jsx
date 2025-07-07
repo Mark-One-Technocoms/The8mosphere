@@ -42,9 +42,9 @@ const Home = () => {
           </Button>
           <Button
             asChild
-            variant="outlineWhite"
+            variant="outline"
             size="lg"
-            className="text-md font-semibold"
+            className="text-md font-semibold text-white border-white"
           >
             <Link to="/request-access">Request Access</Link>
           </Button>

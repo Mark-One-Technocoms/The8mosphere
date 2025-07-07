@@ -2,14 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import AboutImage from "../../assets/images/about.jpg";
+import { CheckCircle } from "lucide-react";
 
 const About = () => {
   const location = useLocation();
 
   return (
     <div
-      className={`bg-gradient-to-br from-blue-50 via-white to-gray-200 text-gray-900 py-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center ${
-        location.pathname !== "/" ? "mt-20" : ""
+      className={`bg-gradient-to-br from-blue-50 via-white to-gray-100 text-gray-900 py-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center ${
+        location.pathname !== "/" ? "pt-36" : ""
       }`}
     >
       <div className="flex flex-col md:flex-row w-full max-w-6xl gap-12 items-start">
@@ -33,26 +34,20 @@ const About = () => {
 
           {/* What Makes Us Different Section */}
           <div className="border-l-4 border-blue-500 pl-8 mb-10">
-            <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-6 text-blue-700 flex items-center gap-2">
+            <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-6 text-gray-900 flex items-center gap-2">
               What Makes Us Different
             </h2>
             <ul className="space-y-4 text-lg text-gray-800">
               <li className="flex items-center gap-3">
-                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-blue-100 text-blue-600 text-xl font-bold shadow-sm">
-                  ✔
-                </span>
+                <CheckCircle className="size-7 text-blue-500 shrink-0 mt-1" />
                 <span>No portals.</span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-blue-100 text-blue-600 text-xl font-bold shadow-sm">
-                  ✔
-                </span>
+                <CheckCircle className="size-7 text-blue-500 shrink-0 mt-1" />
                 <span>No mass-market.</span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-blue-100 text-blue-600 text-xl font-bold shadow-sm">
-                  ✔
-                </span>
+                <CheckCircle className="size-7 text-blue-500 shrink-0 mt-1" />
                 <span>
                   Just cinematic, editorial-grade storytelling made to whisper
                   luxury.
@@ -81,12 +76,13 @@ const About = () => {
         </div>
 
         {/* Right Image */}
-        <div className="flex-1 flex justify-center items-center">
+        <div className="flex-1 flex justify-center items-center relative">
           <img
             src={AboutImage}
             alt="Luxury real estate moodboard"
             className="rounded-xl shadow-xl w-full object-cover"
           />
+          <div className="absolute inset-0 bg-blue-500 rounded-xl opacity-10"></div>
         </div>
       </div>
     </div>

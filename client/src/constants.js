@@ -2,7 +2,7 @@ export const navItems = [
   { name: "Home", to: "/" },
   {
     name: "Membership",
-    to: "/",
+    to: "",
     items: [
       { name: "Members Experience", to: "/membership/members-experience" },
       { name: "Qualifications", to: "/membership/qualifications" },
@@ -10,7 +10,7 @@ export const navItems = [
       { name: "FAQ", to: "/membership/faq" },
     ],
   },
-  { name: "8voice", to: "/8voice" },
+  { name: "8Voiced", to: "/8voiced" },
   {
     name: "Insights",
     to: "",
