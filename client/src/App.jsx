@@ -7,7 +7,6 @@ import EightVoicedDemo from "./components/EightVoicedDemo";
 function App() {
   let location = useLocation();
 
-  console.log(location.pathname);
   return (
     <div className="">
       <Header />

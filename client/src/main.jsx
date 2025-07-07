@@ -63,7 +63,7 @@ const router = createBrowserRouter([
         element: <Map />,
       },
       {
-        path: "/request-access",
+        path: "/membership/request-access",
         element: <RequestAccess />,
       },
     ],
