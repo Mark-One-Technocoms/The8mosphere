@@ -17,58 +17,63 @@ import {
   RequestAccess,
 } from "./pages";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/8voiced",
+          element: <EightVoiced />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+        {
+          path: "/services",
+          element: <Services />,
+        },
+        {
+          path: "/portfolio",
+          element: <Portfolio />,
+        },
+        {
+          path: "/search",
+          element: <Search />,
+        },
+        {
+          path: "/property-search",
+          element: <PropertySearch />,
+        },
+        {
+          path: "/property-detail",
+          element: <PropertyDetail />,
+        },
+        {
+          path: "/map",
+          element: <Map />,
+        },
+        {
+          path: "/membership/request-access",
+          element: <RequestAccess />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/8voiced",
-        element: <EightVoiced />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/services",
-        element: <Services />,
-      },
-      {
-        path: "/portfolio",
-        element: <Portfolio />,
-      },
-      {
-        path: "/search",
-        element: <Search />,
-      },
-      {
-        path: "/property-search",
-        element: <PropertySearch />,
-      },
-      {
-        path: "/property-detail",
-        element: <PropertyDetail />,
-      },
-      {
-        path: "/map",
-        element: <Map />,
-      },
-      {
-        path: "/membership/request-access",
-        element: <RequestAccess />,
-      },
-    ],
-  },
-]);
+    basename: "/The8mosphere",
+  }
+);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
