@@ -62,7 +62,11 @@ const Header = () => {
       {/* Logo or Brand Name - Visible on all screens */}
       <div className="flex-shrink-0">
         <Link to="/">
-          <img className="h-14" src={logo} alt="8mosphere Logo" />
+          <img
+            className="h-10 sm:h-12 md:h-14"
+            src={logo}
+            alt="8mosphere Logo"
+          />
         </Link>
       </div>
 
@@ -78,7 +82,9 @@ const Header = () => {
                     className={`2xl:text-base xl:text-sm bg-transparent hover:bg-transparent font-semibold ${
                       scrolled ? "text-gray-900" : "text-white"
                     } ${
-                      ["/about"].includes(location.pathname)
+                      ["/about", "/membership/request-access"].includes(
+                        location.pathname
+                      )
                         ? "text-gray-900"
                         : ""
                     }`}
@@ -108,7 +114,9 @@ const Header = () => {
                     className={`text-base text-white font-semibold transition-colors duration-200 ${
                       scrolled ? "text-gray-900" : "text-white"
                     } ${
-                      ["/about"].includes(location.pathname)
+                      ["/about", "/membership/request-access"].includes(
+                        location.pathname
+                      )
                         ? "text-gray-900"
                         : ""
                     }`}
@@ -207,11 +215,14 @@ const Header = () => {
           </SheetContent>
         </Sheet>
       </div>
+
       <div className="hidden lg:flex flex-col items-end space-y-2 relative">
         <div className="flex space-x-2">
-          <Button variant="default" size="default" className="">
-            Inquire about Membership
-          </Button>
+          <Link to="/membership/request-access">
+            <Button variant="default" size="default" className="">
+              Inquire about Membership
+            </Button>
+          </Link>
           <Button
             variant="outline"
             size="default"
