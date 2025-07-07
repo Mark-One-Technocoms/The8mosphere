@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -42,6 +42,8 @@ const Header = () => {
   // State to track if user has scrolled down
   const [scrolled, setScrolled] = useState(false);
 
+  const location = useLocation();
+
   // Effect to listen for scroll events
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +55,7 @@ const Header = () => {
 
   return (
     <nav
-      className={`w-full flex justify-between items-center px-10 py-2 fixed top-0 left-0 z-50 transition-all duration-300 ${
+      className={`w-full flex justify-between items-center px-4 sm:px-6 md:px-10 py-2 fixed top-0 left-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-white shadow" : ""
       }`}
     >
@@ -75,6 +77,10 @@ const Header = () => {
                   <NavigationMenuTrigger
                     className={`2xl:text-base xl:text-sm bg-transparent hover:bg-transparent font-semibold ${
                       scrolled ? "text-gray-900" : "text-white"
+                    } ${
+                      ["/about"].includes(location.pathname)
+                        ? "text-gray-900"
+                        : ""
                     }`}
                   >
                     {to ? <Link to={to}>{name}</Link> : name}
@@ -101,6 +107,10 @@ const Header = () => {
                     asChild
                     className={`text-base text-white font-semibold transition-colors duration-200 ${
                       scrolled ? "text-gray-900" : "text-white"
+                    } ${
+                      ["/about"].includes(location.pathname)
+                        ? "text-gray-900"
+                        : ""
                     }`}
                   >
                     <Link to={to}>{name}</Link>
@@ -203,10 +213,12 @@ const Header = () => {
             Inquire about Membership
           </Button>
           <Button
-            variant="outlineWhite"
+            variant="outline"
             size="default"
-            className={`relative ${
-              scrolled ? "text-gray-900 border-gray-900" : ""
+            className={`relative ${scrolled ? "" : "border-white text-white"} ${
+              location.pathname !== "/"
+                ? "text-gray-900 border-gray-900 hover:border-gray-500 hover:text-gray-500"
+                : ""
             }`}
             onClick={() => setShowSearch((prev) => !prev)}
           >
