@@ -1,7 +1,9 @@
+import { WhatWeDo } from "../../components";
+
 const Services = () => {
   return (
     <>
-      <div>Services</div>
+      <WhatWeDo />
     </>
   );
 };

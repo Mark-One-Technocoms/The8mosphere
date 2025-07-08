@@ -9,7 +9,7 @@ const About = () => {
 
   return (
     <div
-      className={`bg-gradient-to-br from-blue-50 via-white to-gray-100 text-gray-900 py-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center ${
+      className={`bg-white text-gray-900 py-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center ${
         location.pathname !== "/" ? "pt-36" : ""
       }`}
     >
@@ -17,7 +17,7 @@ const About = () => {
         {/* Left Content */}
         <div className="flex-1 text-left">
           {/* Headline */}
-          <h1 className="font-playfair text-3xl/10 md:text-4xl/12 lg:text-5xl/16 font-extrabold mb-8">
+          <h1 className="font-playfair text-3xl md:text-4xl lg:text-5xl leading-snug font-extrabold mb-8">
             We’re not a brokerage. <br />
             We’re a{" "}
             <span className="text-blue-600 bg-blue-100 px-2 rounded">
@@ -76,7 +76,7 @@ const About = () => {
         </div>
 
         {/* Right Image */}
-        <div className="flex-1 flex justify-center items-center relative">
+        <div className="flex-1 flex justify-center items-center relative transform transition-all duration-300 ease-in-out hover:scale-105">
           <img
             src={AboutImage}
             alt="Luxury real estate moodboard"

@@ -10,6 +10,12 @@ import {
   Instagram,
   Linkedin,
   Twitter,
+  Camera,
+  Award,
+  Monitor,
+  Users,
+  Heart,
+  Lightbulb,
 } from "lucide-react";
 
 export const navItems = [
@@ -185,4 +191,37 @@ export const footerContacts = [
   },
   { label: "info@8mosphere.com", to: "mailto:info@8mosphere.com", icon: Mail },
   { label: "+91-11-41611155", to: "tel:+91-11-41611155", icon: Phone },
+];
+
+export const serviceSnapshorts = [
+  {
+    title: "Cinematic Campaigns",
+    description: "Editorial-style photo & video shoots",
+    icon: Camera,
+  },
+  {
+    title: "Brand Decks",
+    description: "Story-driven investor and buyer presentations",
+    icon: Award,
+  },
+  {
+    title: "Digital Launch Kits",
+    description: "Instagram-ready, built for buzz",
+    icon: Monitor,
+  },
+  {
+    title: "Private Events",
+    description: "Discreet showings, influencer showcases",
+    icon: Users,
+  },
+  {
+    title: "Styling & Scenting",
+    description: "Visual and sensory curation",
+    icon: Heart,
+  },
+  {
+    title: "ff-Market Pitching",
+    description: "Quiet launches to our exclusive network",
+    icon: Lightbulb,
+  },
 ];
