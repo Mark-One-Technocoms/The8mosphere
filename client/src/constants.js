@@ -6,6 +6,10 @@ import {
   Globe,
   Headset,
   MessageSquare,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
 } from "lucide-react";
 
 export const navItems = [
@@ -147,4 +151,38 @@ export const requestAccessFormFields = [
     ],
     required: true,
   },
+];
+
+export const socialMediaLinks = [
+  { label: "facebook", to: "#", icon: Facebook },
+  { label: "instagram", to: "#", icon: Instagram },
+  { label: "linkedin", to: "#", icon: Linkedin },
+  { label: "twitter", to: "#", icon: Twitter },
+];
+
+export const footerQuickLinks = [
+  { label: "Membership Inquiry", to: "/membership/request-access" },
+  { label: "Qualifications", to: "#" },
+  { label: "What is 8Voiced?", to: "/8voiced" },
+  { label: "Family Office Groups", to: "#" },
+  { label: "Contact Us", to: "/contact" },
+];
+
+export const footerResources = [
+  { label: "Blog", to: "#" },
+  { label: "Family Office Groups", to: "#" },
+  { label: "FAQs", to: "#" },
+  { label: "Privacy Policy", to: "#" },
+  { label: "Terms of Service", to: "#" },
+];
+
+export const footerContacts = [
+  {
+    label:
+      "D-3/3, Pocket D, Okhla Phase II, Okhla Industrial Estate, New Delhi, Delhi 110020",
+    to: "",
+    icon: MapPin,
+  },
+  { label: "info@8mosphere.com", to: "mailto:info@8mosphere.com", icon: Mail },
+  { label: "+91-11-41611155", to: "tel:+91-11-41611155", icon: Phone },
 ];
