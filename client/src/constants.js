@@ -252,3 +252,9 @@ export const selectedProjects = [
     image: OurWorkImage4,
   },
 ];
+
+export const fitCriteria = [
+    "Launching a one-of-a-kind listing",
+    "Building a luxury development",
+    "Marketing to discreet, high-end clients",
+  ];

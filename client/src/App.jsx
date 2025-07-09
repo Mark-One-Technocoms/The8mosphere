@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Header, Footer, WhatWeDo, OurWork } from "./components";
 import { useLocation } from "react-router-dom";
-import { Home, About } from "./pages";
+import { Home, About, JoinUs } from "./pages";
 import EightVoicedDemo from "./components/EightVoicedDemo";
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
             <EightVoicedDemo />
             <OurWork />
             <About />
+            <JoinUs />
           </>
         ) : (
           <Outlet />
