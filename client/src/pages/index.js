@@ -9,6 +9,7 @@ import RequestAccess from "./RequestAccess/RequestAccess";
 import Search from "./Search/Search";
 import Services from "./Services/Services";
 import EightVoiced from "./EightVoiced/EightVoiced";
+import JoinUs from "./JoinUs/JoinUs";
 
 export {
   About,
@@ -22,4 +23,5 @@ export {
   RequestAccess,
   Search,
   Services,
+  JoinUs,
 };
