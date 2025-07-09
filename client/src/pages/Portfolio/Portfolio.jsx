@@ -1,7 +1,9 @@
+import { OurWork } from "../../components";
+
 const Portfolio = () => {
   return (
     <>
-      <div>Portfolio</div>
+      <OurWork />
     </>
   );
 };

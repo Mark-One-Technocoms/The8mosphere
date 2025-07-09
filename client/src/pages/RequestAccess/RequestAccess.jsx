@@ -45,7 +45,7 @@ const RequestAccessPage = () => {
 
   return (
     <div
-      className={`bg-gradient-to-br from-gray-50 via-white to-blue-50 text-gray-900 py-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center ${
+      className={`bg-gray-50 text-gray-900 py-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center ${
         location.pathname !== "/" ? "pt-32" : ""
       }`}
     >
