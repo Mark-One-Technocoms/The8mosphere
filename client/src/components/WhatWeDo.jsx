@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-// Import all specific icons that you might use in serviceSnapshorts
-import { CheckCircle } from "lucide-react";
 import { serviceSnapshorts } from "../constants";
 import ServicesSnapshotImage1 from "../assets/images/service-snapshot-1.jpg";
 import ServicesSnapshotImage2 from "../assets/images/service-snapshot-2.jpg";
@@ -40,9 +38,9 @@ const WhatWeDo = () => {
         {/* Right Column: Existing Content (Headline, Services, CTA) */}
         <div className="w-full md:w-3/5 text-center md:text-left mt-12 md:mt-0">
           {/* Headline */}
-          <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 leading-snug animate-fade-in-down delay-100">
+          <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 leading-tight animate-fade-in-down delay-100">
             We brand property like
-            <span className="text-blue-600 bg-blue-100 px-2 rounded ml-2">
+            <span className="text-blue-600 px-2 rounded ml-2">
               fashion, film, and art.
             </span>
           </h2>

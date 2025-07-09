@@ -17,6 +17,10 @@ import {
   Heart,
   Lightbulb,
 } from "lucide-react";
+import OurWorkImage1 from "./assets/images/our-work-1.jpg";
+import OurWorkImage2 from "./assets/images/our-work-2.jpg";
+import OurWorkImage3 from "./assets/images/our-work-3.jpg";
+import OurWorkImage4 from "./assets/images/our-work-4.jpg";
 
 export const navItems = [
   { name: "Home", to: "/" },
@@ -223,5 +227,28 @@ export const serviceSnapshorts = [
     title: "ff-Market Pitching",
     description: "Quiet launches to our exclusive network",
     icon: Lightbulb,
+  },
+];
+
+export const selectedProjects = [
+  {
+    title: "Midnight Marble",
+    location: "LA Hills penthouse",
+    image: OurWorkImage1,
+  },
+  {
+    title: "Warm Modern",
+    location: "London townhouse",
+    image: OurWorkImage2,
+  },
+  {
+    title: "Ocean Whisper",
+    location: "Ibiza cliff villa",
+    image: OurWorkImage3,
+  },
+  {
+    title: "Desert Soul",
+    location: "Dubai private compound",
+    image: OurWorkImage4,
   },
 ];
