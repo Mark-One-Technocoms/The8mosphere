@@ -29,6 +29,7 @@ const Footer = () => {
           <div className="flex justify-center md:justify-start space-x-6 mt-6">
             {socialMediaLinks.map((socialMediaLink) => (
               <Link
+                key={socialMediaLink.id}
                 to={socialMediaLink.to}
                 className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
               >
@@ -45,7 +46,7 @@ const Footer = () => {
           </h4>
           <ul className="space-y-3 text-gray-300 text-base">
             {footerQuickLinks.map((quickLink) => (
-              <li>
+              <li key={quickLink.id}>
                 <Link
                   to={quickLink.to}
                   className="hover:text-blue-400 transition-colors duration-300"
@@ -64,7 +65,7 @@ const Footer = () => {
           </h4>
           <ul className="space-y-3 text-gray-300 text-base">
             {footerResources.map((resource) => (
-              <li>
+              <li key={resource.id}>
                 <a
                   href={resource.to}
                   className="hover:text-blue-400 transition-colors duration-300"
@@ -84,6 +85,7 @@ const Footer = () => {
           <div className="space-y-3 px-16 sm:px-0 text-gray-300 text-base not-italic">
             {footerContacts.map((contact) => (
               <Link
+                key={contact.id}
                 to={contact.to}
                 className="flex items-center justify-center md:justify-start text-gray-400 hover:text-blue-400 gap-3"
               >
