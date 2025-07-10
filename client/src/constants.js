@@ -16,6 +16,7 @@ import {
   Users,
   Heart,
   Lightbulb,
+  Home,
 } from "lucide-react";
 import OurWorkImage1 from "./assets/images/our-work-1.jpg";
 import OurWorkImage2 from "./assets/images/our-work-2.jpg";
@@ -164,37 +165,43 @@ export const requestAccessFormFields = [
 ];
 
 export const socialMediaLinks = [
-  { label: "facebook", to: "#", icon: Facebook },
-  { label: "instagram", to: "#", icon: Instagram },
-  { label: "linkedin", to: "#", icon: Linkedin },
-  { label: "twitter", to: "#", icon: Twitter },
+  { id: 1, label: "facebook", to: "#", icon: Facebook },
+  { id: 2, label: "instagram", to: "#", icon: Instagram },
+  { id: 3, label: "linkedin", to: "#", icon: Linkedin },
+  { id: 4, label: "twitter", to: "#", icon: Twitter },
 ];
 
 export const footerQuickLinks = [
-  { label: "Membership Inquiry", to: "/membership/request-access" },
-  { label: "Qualifications", to: "#" },
-  { label: "What is 8Voiced?", to: "/8voiced" },
-  { label: "Family Office Groups", to: "#" },
-  { label: "Contact Us", to: "/contact" },
+  { id: 1, label: "Membership Inquiry", to: "/membership/request-access" },
+  { id: 2, label: "Qualifications", to: "#" },
+  { id: 3, label: "What is 8Voiced?", to: "/8voiced" },
+  { id: 4, label: "Family Office Groups", to: "#" },
+  { id: 5, label: "Contact Us", to: "/contact" },
 ];
 
 export const footerResources = [
-  { label: "Blog", to: "#" },
-  { label: "Family Office Groups", to: "#" },
-  { label: "FAQs", to: "#" },
-  { label: "Privacy Policy", to: "#" },
-  { label: "Terms of Service", to: "#" },
+  { id: 1, label: "Blog", to: "#" },
+  { id: 2, label: "Family Office Groups", to: "#" },
+  { id: 3, label: "FAQs", to: "#" },
+  { id: 4, label: "Privacy Policy", to: "#" },
+  { id: 5, label: "Terms of Service", to: "#" },
 ];
 
 export const footerContacts = [
   {
+    id: 1,
     label:
       "D-3/3, Pocket D, Okhla Phase II, Okhla Industrial Estate, New Delhi, Delhi 110020",
     to: "",
     icon: MapPin,
   },
-  { label: "info@8mosphere.com", to: "mailto:info@8mosphere.com", icon: Mail },
-  { label: "+91-11-41611155", to: "tel:+91-11-41611155", icon: Phone },
+  {
+    id: 2,
+    label: "info@8mosphere.com",
+    to: "mailto:info@8mosphere.com",
+    icon: Mail,
+  },
+  { id: 3, label: "+91-11-41611155", to: "tel:+91-11-41611155", icon: Phone },
 ];
 
 export const serviceSnapshorts = [
@@ -254,7 +261,84 @@ export const selectedProjects = [
 ];
 
 export const fitCriteria = [
-    "Launching a one-of-a-kind listing",
-    "Building a luxury development",
-    "Marketing to discreet, high-end clients",
-  ];
+  "Launching a one-of-a-kind listing",
+  "Building a luxury development",
+  "Marketing to discreet, high-end clients",
+];
+
+export const formFields = [
+  {
+    name: "fullName",
+    label: "Full Name",
+    placeholder: "John Doe",
+    type: "text",
+    icon: User,
+    component: "input",
+    rules: {
+      required: "Full Name is required",
+      minLength: {
+        value: 3,
+        message: "Full Name must be at least 3 characters long",
+      },
+      maxLength: {
+        value: 100,
+        message: "Full Name must not exceed 100 characters",
+      },
+    },
+  },
+  {
+    name: "email",
+    label: "Email",
+    placeholder: "john.doe@example.com",
+    type: "email",
+    icon: Mail,
+    component: "input",
+    rules: {
+      required: "Email is required",
+      pattern: {
+        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        message: "Please enter a valid email address",
+      },
+    },
+  },
+  {
+    name: "phone",
+    label: "Phone",
+    placeholder: "+91 12345-67890",
+    type: "tel",
+    icon: Phone,
+    component: "input",
+    rules: {},
+  },
+  {
+    name: "propertyType",
+    label: "Property Type",
+    placeholder: "e.g., Penthouse, Villa, Development",
+    type: "text",
+    icon: Home,
+    component: "input",
+    rules: {
+      required: "Property Type must be specified",
+      minLength: {
+        value: 2,
+        message: "Property Type must be at least 2 characters",
+      },
+    },
+  },
+  {
+    name: "vibeAimingFor",
+    label: "What vibe are you aiming for?",
+    placeholder:
+      "Describe the mood, style, or feeling you envision for your property's marketing",
+    icon: MessageSquare,
+    component: "textarea",
+    rows: 5,
+    rules: {
+      required: "Please describe the vibe you are aiming for",
+      minLength: {
+        value: 10,
+        message: "Please describe the vibe in at least 10 characters",
+      },
+    },
+  },
+];

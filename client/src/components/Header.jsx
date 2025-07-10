@@ -87,6 +87,7 @@ const Header = () => {
                           "/about",
                           "/membership/request-access",
                           "/services",
+                          "/contact",
                         ].includes(location.pathname)
                           ? "text-gray-900"
                           : ""
@@ -121,6 +122,7 @@ const Header = () => {
                           "/about",
                           "/membership/request-access",
                           "/services",
+                          "/contact",
                         ].includes(location.pathname)
                           ? "text-gray-900"
                           : ""
