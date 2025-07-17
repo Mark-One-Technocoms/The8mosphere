@@ -23,7 +23,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Menu, ChevronDown, Search, XIcon } from "lucide-react";
 import { navItems } from "../constants";
-import logo from "../assets/logo/8mosphere-logo.PNG";
+import logo from "../assets/logo/8mosphere-globe-logo.png";
 
 const Header = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false); // State to manage sheet open/close
@@ -61,14 +61,26 @@ const Header = () => {
     >
       <nav className="max-w-[96rem] mx-auto flex justify-between items-center px-4 sm:px-6 md:px-10 py-2">
         {/* Logo or Brand Name - Visible on all screens */}
-        <div className="flex-shrink-0">
-          <Link to="/">
-            <img
-              className="h-10 sm:h-12 md:h-14"
-              src={logo}
-              alt="8mosphere Logo"
-            />
-          </Link>
+        <div
+          className={`flex gap-2 relative mr-45 ${
+            scrolled ? "text-gray-800" : "text-white"
+          }`}
+        >
+          <div className="flex-shrink-0">
+            <Link to="/">
+              <img
+                className="h-10 sm:h-12 md:h-14"
+                src={logo}
+                alt="8mosphere Logo"
+              />
+            </Link>
+          </div>
+          <p className="absolute top-3 left-15 text-2xl font-bold tracking-wider font-sansation">
+            8MOSPHERE
+          </p>
+          <p className="absolute top-9.5 left-21 text-[10px] whitespace-nowrap font-caveatBrush">
+            Private Asset Marketing Firm
+          </p>
         </div>
 
         {/* Desktop Navigation - Hide on small screens, show on large screens */}

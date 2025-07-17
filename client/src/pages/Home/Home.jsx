@@ -1,60 +1,46 @@
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import HeroBackgroundVideo from "../../assets/videos/real-estate.mp4";
+import HeroImage from "../../assets/images/Hero_1.jpg";
 
-const Home = () => {
+const Hero = () => {
   return (
-    <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video/Image */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-90"
-        autoPlay
-        loop
-        muted
-        playsInline
-        src={HeroBackgroundVideo}
-        // Fallback for browsers that don't support video or if video path is incorrect
-        // You can also add a poster image for faster loading/fallback
-        // poster="/path/to/your/hero-background-image.jpg"
-      >
-        Your browser does not support the video tag.
-      </video>
-      {/* Optional: Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+    <section
+      className="relative min-h-screen flex items-center justify-center text-white bg-black overflow-hidden"
+      style={{
+        backgroundImage: `url(${HeroImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Overlay for dark gradient effect */}
+      <div className="absolute inset-0 bg-black/50 z-0" />
 
-      {/* Content Layer */}
-      <section className="relative z-20 text-center text-white max-w-5xl mx-auto px-4">
-        <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 drop-shadow-lg animate-fade-in-down">
-          Welcome to <span className="text-blue-500">8mosphere</span>
+      {/* Content */}
+      <div className="relative z-10 text-center px-6 max-w-3xl">
+        <h1 className="text-4xl md:text-7xl font-serif font-bold leading-tight mb-6 animate-fade-in">
+          Cinematic Trust in Luxury Real Estate
         </h1>
-        <p className="text-xl md:text-2xl lg:text-3xl font-light italic mb-8 drop-shadow animate-fade-in-up">
-          A creative agency for luxury real estate, powered by story, mood, and
-          style.
-        </p>
-        <p className="text-lg md:text-xl font-medium mb-10 drop-shadow animate-fade-in-up">
-          We don’t just market property. We design the feeling of ownership.
+        <p className="text-lg md:text-xl mb-10 animate-fade-in delay-200">
+          We don’t broker or list. We build desire through mood, narrative, and
+          emotional UX.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in-up">
-          <Button variant="default" size="lg" className="text-md font-semibold">
-            <Link to="/portfolio">View Our Work</Link>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="text-md font-semibold text-white border-white"
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 animate-fade-in delay-400">
+          <a
+            href="#"
+            className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-gold transition-all"
           >
-            <Link to="/request-access">Request Access</Link>
-          </Button>
+            See a Cinematic Campaign
+          </a>
+          <a
+            href="#"
+            className="border border-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all"
+          >
+            Experience the Platform
+          </a>
         </div>
-        <p className="text-sm text-gray-200 font-medium mt-3 animate-fade-in-up">
-          By invitation only.
-        </p>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
-export default Home;
+export default Hero;
