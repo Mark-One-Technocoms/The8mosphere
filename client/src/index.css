@@ -129,12 +129,6 @@ body {
   }
 }
 
-/* Global CSS variables (from Shadcn or custom) - These come AFTER @imports */
-:root {
-  --radius: 0.625rem; /* Ensure this is correctly defined, possibly from your Shadcn setup */
-  /* Other global CSS variables if you have them */
-}
-
 @theme {
   --font-playfair: "Playfair Display", serif;
   --font-montserrat: "Montserrat", sans-serif;

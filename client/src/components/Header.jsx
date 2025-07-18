@@ -75,12 +75,14 @@ const Header = () => {
               />
             </Link>
           </div>
-          <p className="absolute top-3 left-15 text-2xl font-bold tracking-wider font-sansation">
-            8MOSPHERE
-          </p>
-          <p className="absolute top-9.5 left-21 text-[10px] whitespace-nowrap font-caveatBrush">
-            Private Asset Marketing Firm
-          </p>
+          <div className="">
+            <p className="absolute top-3 left-15 text-2xl font-bold tracking-wider font-sansation">
+              8MOSPHERE
+            </p>
+            <p className="absolute top-9.5 left-21 text-[10px] whitespace-nowrap font-caveatBrush">
+              Private Asset Marketing Firm
+            </p>
+          </div>
         </div>
 
         {/* Desktop Navigation - Hide on small screens, show on large screens */}
