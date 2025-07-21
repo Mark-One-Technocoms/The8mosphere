@@ -5,7 +5,7 @@ import { CarouselSlide } from "../components";
 
 const OurWork = () => {
   return (
-    <section className="bg-white text-gray-900 py-24 md:py-32 px-4 sm:px-6 lg:px-8 text-center">
+    <section className="bg-white text-gray-900 py-24 md:py-32 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Headline - Adjusted text colors for white background */}
         <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 max-w-2xl place-self-center leading-tight animate-fade-in-down delay-100">

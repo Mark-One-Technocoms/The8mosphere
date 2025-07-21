@@ -19,15 +19,16 @@ const Hero = () => {
       />
 
       {/* Dynamic Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70 z-0" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60 z-0" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl">
-        <h1 className="text-5xl md:text-7xl font-serif font-extrabold leading-tight mb-6 tracking-wide">
+      <div className="relative z-10 text-center mx-5 md:mx-10">
+        <h1 className="text-5xl sm:text-4xl md:text-5xl 2xl:text-6xl font-serif font-extrabold leading-tight mb-6 tracking-wide">
           {/* Custom text shadow for glow */}
-          Cinematic Trust in Luxury Real Estate
+          <p>Cinematic Trust in Luxury</p>
+          <p>Real Estate</p>
         </h1>
-        <p className="text-xl md:text-2xl mb-10 leading-snug max-w-3xl mx-auto">
+        <p className="text-xl sm:text-lg md:text-xl 2xl:text-2xl mx-auto mb-10 leading-snug">
           We don’t broker or list. We build desire through mood, narrative, and
           emotional UX.
         </p>

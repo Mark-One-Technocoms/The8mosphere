@@ -7,7 +7,7 @@ import JoinUsImage2 from "../../assets/images/join-2.jpg";
 
 const JoinUs = () => {
   return (
-    <section className="bg-white py-24 md:py-32 px-4 sm:px-6 lg:px-8 text-gray-900">
+    <section className="bg-white py-24 md:py-32 px-4 sm:px-6 lg:px-8 text-gray-900 overflow-hidden">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 sm:gap-20 lg:gap-28">
         {/* Left Column: Images */}
         <div className="w-full md:w-2/5 flex flex-col items-center md:items-start space-y-6 md:space-y-0 relative animate-fade-in-up">

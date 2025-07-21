@@ -19,9 +19,9 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { Button } from "@/components/ui/button";
+import Button from "./Generic/Button";
 import { Input } from "@/components/ui/input";
-import { Menu, ChevronDown, Search, XIcon } from "lucide-react";
+import { Kanban, ChevronDown, Search, XIcon } from "lucide-react";
 import { navItems } from "../constants";
 import logo from "../assets/logo/8mosphere-globe-logo.png";
 
@@ -56,23 +56,19 @@ const Header = () => {
   return (
     <div
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow" : ""
+        scrolled ? "bg-white shadow-xl transition duration-500" : ""
       }`}
     >
       <nav className="max-w-[96rem] mx-auto flex justify-between items-center px-4 sm:px-6 md:px-10 py-2">
         {/* Logo or Brand Name - Visible on all screens */}
         <div
-          className={`flex gap-2 relative mr-45 ${
+          className={`flex gap-2 relative lg:mr-35 xl:mr-40 2xl:mr-45 lg:scale-80 xl:scale-90 2xl:scale-100 ${
             scrolled ? "text-gray-800" : "text-white"
           }`}
         >
           <div className="flex-shrink-0">
             <Link to="/">
-              <img
-                className="h-10 sm:h-12 md:h-14"
-                src={logo}
-                alt="8mosphere Logo"
-              />
+              <img className="h-14" src={logo} alt="8mosphere_Logo" />
             </Link>
           </div>
           <div className="">
@@ -94,7 +90,7 @@ const Header = () => {
                 items && items.length > 0 ? (
                   <NavigationMenuItem key={name}>
                     <NavigationMenuTrigger
-                      className={`2xl:text-base xl:text-sm bg-transparent hover:bg-transparent font-semibold ${
+                      className={`text-sm bg-transparent hover:bg-transparent font-semibold ${
                         scrolled ? "text-gray-900" : "text-white"
                       } ${
                         [
@@ -129,7 +125,7 @@ const Header = () => {
                   <NavigationMenuItem key={name}>
                     <NavigationMenuLink
                       asChild
-                      className={`text-base text-white font-semibold transition-colors duration-200 ${
+                      className={`text-sm text-white font-semibold transition-colors duration-200 ${
                         scrolled ? "text-gray-900" : "text-white"
                       } ${
                         [
@@ -155,21 +151,36 @@ const Header = () => {
         <div className="lg:hidden">
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
-              <Button
-                variant="outline"
-                size="icon"
-                className="h-10 w-10 rounded-full border-none"
-              >
-                <Menu className="size-6 text-blue-500" />
-                <span className="sr-only">Toggle navigation menu</span>
-              </Button>
+              <Link onClick={() => setIsSheetOpen(true)}>
+                <Button
+                  type="none"
+                  size="none"
+                  Icon={Kanban}
+                  iconClass={`size-6 rotate-90 ${
+                    scrolled ? "text-gray-900" : "text-white"
+                  }`}
+                />
+              </Link>
             </SheetTrigger>
             <SheetContent
               side="right"
               className="w-[300px] sm:w-[400px] px-8 py-6 flex flex-col"
             >
-              <div className="flex items-start mb-6">
-                <img className="h-12" src={logo} alt="8mosphere Logo" />
+              {/* Logo or Brand Name - Visible on all screens */}
+              <div className="flex gap-2 relative scale-80 mb-6 self-start">
+                <div className="flex-shrink-0">
+                  <Link to="/">
+                    <img className="h-14" src={logo} alt="8mosphere_Logo" />
+                  </Link>
+                </div>
+                <div className="">
+                  <p className="absolute top-3 left-15 text-2xl font-bold tracking-wider font-sansation">
+                    8MOSPHERE
+                  </p>
+                  <p className="absolute top-9.5 left-21 text-[10px] whitespace-nowrap font-caveatBrush">
+                    Private Asset Marketing Firm
+                  </p>
+                </div>
               </div>
 
               <nav className="flex flex-col space-y-4">
@@ -238,41 +249,55 @@ const Header = () => {
           </Sheet>
         </div>
 
-        <div className="hidden lg:flex flex-col items-end space-y-2 relative">
-          <div className="flex space-x-2">
+        <div className="hidden lg:flex flex-col items-end space-y-2 relative lg:scale-80 xl:scale-90 2xl:scale-100">
+          <div className="flex items-center space-x-2">
             <Link to="/membership/request-access">
-              <Button variant="default" size="default" className="">
-                Inquire about Membership
-              </Button>
+              <Button
+                type="primary"
+                size="sm"
+                label="Membership Inquire"
+                buttonClassName={`${
+                  scrolled
+                    ? "bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:text-black"
+                    : "bg-white text-black hover:text-white"
+                }`}
+                hoverEffectClassName={`${
+                  scrolled ? "!bg-gradient-to-l from-blue-500 to-blue-700" : ""
+                }`}
+              />
             </Link>
-            <Button
-              variant="outline"
-              size="default"
-              className={`relative ${
-                scrolled ? "" : "border-white text-white"
-              } ${
-                location.pathname !== "/"
-                  ? "text-gray-900 border-gray-900 hover:border-gray-500 hover:text-gray-500"
-                  : ""
-              }`}
-              onClick={() => setShowSearch((prev) => !prev)}
-            >
-              {showSearch ? (
-                <XIcon className="size-5" />
-              ) : (
-                <Search className="size-5" />
-              )}
-            </Button>
+            <div className="relative m-0">
+              <div
+                className={`cursor-pointer border rounded-full p-2.5 ${
+                  scrolled
+                    ? "border-gray-900 hover:bg-gray-100"
+                    : "border-white text-white hover:bg-white/10"
+                } ${
+                  location.pathname !== "/"
+                    ? "text-gray-900 border-gray-900 hover:border-gray-500 hover:text-gray-500"
+                    : ""
+                }`}
+                onClick={() => setShowSearch((prev) => !prev)}
+              >
+                {showSearch ? (
+                  <XIcon className="size-5" />
+                ) : (
+                  <Search className="size-5" />
+                )}
+              </div>
+            </div>
+            {showSearch && (
+              <Input
+                type="text"
+                placeholder="Search..."
+                value={searchValue}
+                className={`absolute bg-white text-gray-900 rounded-full ${
+                  scrolled ? "top-16" : "top-13"
+                }`}
+                onChange={(e) => setSearchValue(e.target.value)}
+              />
+            )}
           </div>
-          {showSearch && (
-            <Input
-              type="text"
-              placeholder="Search..."
-              value={searchValue}
-              className="text-white absolute top-12"
-              onChange={(e) => setSearchValue(e.target.value)}
-            />
-          )}
         </div>
       </nav>
     </div>

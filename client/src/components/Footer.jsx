@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-blue-950 to-black text-white px-4 sm:px-6 lg:px-8 shadow-inner-2xl">
+    <footer className="bg-gradient-to-br from-blue-950 to-black text-white px-4 sm:px-6 lg:px-8 shadow-inner-2xl overflow-hidden">
       <div className="max-w-7xl mx-auto py-16 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 lg:gap-16">
         {/* Section 1: Brand Info */}
         <div className="md:col-span-1 text-center md:text-left">
