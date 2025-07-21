@@ -5,8 +5,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import HeroImage_1 from "../../assets/images/hero_1.jpg";
-import HeroImage_2 from "../../assets/images/hero_2.jpg";
-import HeroImage_3 from "../../assets/images/hero_3.png";
+import HeroImage_2 from "../../assets/images/join-1.jpg";
+import HeroImage_3 from "../../assets/images/join-2.jpg";
 
 const SwiperSlider = () => {
   return (
@@ -101,7 +101,8 @@ const SwiperSlider = () => {
                 className="text-3xl md:text-6xl font-serif font-bold leading-tight mb-6 animate-fade-in"
                 data-swiper-parallax="-300"
               >
-                A creative agency & SaaS redefining luxury real estate through emotion
+                A creative agency & SaaS redefining luxury real estate through
+                emotion
               </h1>
               <p
                 className="text-lg md:text-xl mb-10 animate-fade-in delay-200"
